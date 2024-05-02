@@ -3,6 +3,9 @@
 
 Использованные ассеты:
 
+Камера:
+https://unity.com/unity/features/editor/art-and-design/cinemachine
+
 Небо: 
 Пока я принял решение, что небо возьму из ассетов, позже и оно будет нарисованно мной. 
 На данный момент небо взято из Pixel Skies DEMO Background pack, ссылка на него: 
