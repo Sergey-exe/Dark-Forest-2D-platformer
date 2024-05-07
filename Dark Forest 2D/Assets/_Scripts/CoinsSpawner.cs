@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class CoinsSpawner : MonoBehaviour
 {
     [SerializeField] private Player _player;
-    [SerializeField] private GameObject[] _coins;
+    [SerializeField] private GameObject _coin;
     [SerializeField] private int _countCoins;
     [SerializeField] private float _offset;
 
@@ -32,7 +32,7 @@ public class CoinsSpawner : MonoBehaviour
     {
         for (int i = 0; i < _countCoins; i++)
         {
-            Instantiate(_coins[Random.Range(0, _coins.Length)], _position, Quaternion.identity);
+            Instantiate(_coin, _position, Quaternion.identity);
             _position.x += _offset;
         } 
     }

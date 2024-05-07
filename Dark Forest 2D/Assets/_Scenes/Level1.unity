@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3911a32d21cd664bb36ed46eb11d53d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0.005
+  _moveSpeed: 0.01
   _jumpForce: 7
   _rayDistance: 0.1
   _rayStarter: {fileID: 723293220}
@@ -8625,20 +8625,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.39328766, y: 1.258831}
   m_EdgeRadius: 0
---- !u!114 &687368800
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 687368794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe244a79c4256f84e93ab25e756d51b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _player: {fileID: 687368801}
-  _countMoneys: 0
 --- !u!114 &687368801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11284,7 +11270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTag: Player
-  _enemyTransform: {fileID: 0}
 --- !u!61 &900240306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13511,7 +13496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _enemyTag: Player
-  _enemyTransform: {fileID: 0}
 --- !u!61 &1201027033
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13893,9 +13877,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4eaaf9ab5ad218c4eb0b6ba5256780dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 687368797}
-    - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4eaaf9ab5ad218c4eb0b6ba5256780dd, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 687368800}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: 4eaaf9ab5ad218c4eb0b6ba5256780dd, type: 3}
       insertIndex: -1
       addedObject: {fileID: 687368799}
@@ -18905,6 +18886,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8068539817098931163, guid: ea5627041c4695c44a72a1a24349f0d6, type: 3}
+      propertyPath: _coin
+      value: 
+      objectReference: {fileID: 6129450855060685061, guid: 4bfc71f2d6678964a891efb618ac4827, type: 3}
+    - target: {fileID: 8068539817098931163, guid: ea5627041c4695c44a72a1a24349f0d6, type: 3}
       propertyPath: _player
       value: 
       objectReference: {fileID: 687368801}
@@ -19428,6 +19413,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8068539817098931163, guid: ea5627041c4695c44a72a1a24349f0d6, type: 3}
+      propertyPath: _coin
+      value: 
+      objectReference: {fileID: 6129450855060685061, guid: 4bfc71f2d6678964a891efb618ac4827, type: 3}
     - target: {fileID: 8068539817098931163, guid: ea5627041c4695c44a72a1a24349f0d6, type: 3}
       propertyPath: _player
       value: 

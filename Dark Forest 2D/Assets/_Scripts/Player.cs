@@ -11,6 +11,9 @@ public class Player : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Coin>())
+        {
             CoinSelection?.Invoke(collision.GetComponent<Coin>());
+            Wallet.AddCoins(collision.GetComponent<Coin>().Denomination);
+        }
     }
 }

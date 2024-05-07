@@ -5,5 +5,5 @@ using UnityEngine.Events;
 
 public class Coin : MonoBehaviour 
 {
-    [SerializeField] public int Denomination;
+    public int Denomination;
 }

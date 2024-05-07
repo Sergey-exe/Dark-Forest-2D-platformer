@@ -1,24 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Wallet : MonoBehaviour
+public static class Wallet
 {
-    [SerializeField] private Player _player;
-    [SerializeField] private int _countMoneys = 0;
+    private static int _countCoins = 0;
 
-    private void OnEnable()
+    public static void AddCoins(int countCoins)
     {
-        _player.CoinSelection += AddMoney;
-    }
-
-    private void OnDisable()
-    {
-        _player.CoinSelection -= AddMoney;
-    }
-
-    private void AddMoney(Coin coin)
-    {
-        _countMoneys += coin.Denomination;
+        _countCoins += countCoins;
     }
 }
