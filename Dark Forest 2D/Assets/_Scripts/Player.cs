@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,14 +7,14 @@ using UnityEngine.Events;
 
 public class Player : MonoBehaviour
 {
-    public event UnityAction<Coin> CoinSelection;
+    [SerializeField] private Wallet _wallet; 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Coin>())
         {
-            CoinSelection?.Invoke(collision.GetComponent<Coin>());
-            Wallet.AddCoins(collision.GetComponent<Coin>().Denomination);
+            collision.GetComponent<Coin>().PickUp();
+            _wallet.AddCoins(collision.GetComponent<Coin>().Denomination);
         }
     }
 }

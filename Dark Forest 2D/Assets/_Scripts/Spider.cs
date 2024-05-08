@@ -35,6 +35,7 @@ public class Spider : MonoBehaviour
             case < 0:
                 transform.localRotation = TurnRight;
                 break;
+
             case > 0:
                 transform.localRotation = TurnLeft;
                 break;
@@ -49,6 +50,8 @@ public class Spider : MonoBehaviour
 
     private void ChangeDirection()
     {
-        _axis *= -1;
+        int directionBack = -1;
+
+        _axis *= directionBack;
     }
 }

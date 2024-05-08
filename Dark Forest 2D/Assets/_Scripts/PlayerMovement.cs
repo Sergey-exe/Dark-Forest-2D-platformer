@@ -4,10 +4,10 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private const string Horizontal = nameof(Horizontal);
+    private readonly int IsRun = Animator.StringToHash("Run");
 
     private Quaternion TurnLeft = Quaternion.Euler(0f, 180f, 0f);
     private Quaternion TurnRight = Quaternion.identity;
-    private readonly int IsRun = Animator.StringToHash("Run");
 
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpForce;

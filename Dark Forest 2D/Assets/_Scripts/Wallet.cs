@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public static class Wallet
+public class Wallet : MonoBehaviour 
 {
-    private static int _countCoins = 0;
+    [SerializeField] private int _countCoins = 0;
 
-    public static void AddCoins(int countCoins)
+    public void AddCoins(int countCoins)
     {
         _countCoins += countCoins;
     }
