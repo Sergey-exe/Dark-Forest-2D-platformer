@@ -7,10 +7,10 @@ public class ObstructionDetector : MonoBehaviour
     [SerializeField] private float _rayDistance;
     [SerializeField] private Color32 _rayColor;
 
-    public event UnityAction HasObstruction;
-
     private Vector2 _directionForwardHit = Vector2.down;
     private Vector2 _directionDownHit;
+    
+    public bool HasObstruction { get; private set; }
 
     private void Start()
     {
@@ -28,7 +28,9 @@ public class ObstructionDetector : MonoBehaviour
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, _directionDownHit, _rayDistance, _layerObstruction);
 
         if (forwardHit.collider != null || downHit.collider == null)
-            HasObstruction?.Invoke();
+            HasObstruction = true;
+        else 
+            HasObstruction = false;
     }
 
     private void LateUpdate()

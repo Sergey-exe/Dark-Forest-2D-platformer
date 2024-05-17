@@ -1,0 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UIElements;
+
+public class BonusSpawner : MonoBehaviour
+{
+    [SerializeField] private GameObject _bonus;
+    [SerializeField] private int _countBonus;
+    [SerializeField] private float _offset;
+
+    private Vector2 _position;
+
+    private void Start()
+    {
+        _position = transform.position;
+        Spawn();
+    }
+
+    private void Spawn()
+    {
+        for (int i = 0; i < _countBonus; i++)
+        {
+            GameObject coin = Instantiate(_bonus, _position, Quaternion.identity);
+            coin.GetComponent<Bonus>().OnPickUp += DestroyBonus;
+            _position.x += _offset;
+        } 
+    }
+
+    private void DestroyBonus(Bonus bonus)
+    {
+        bonus.OnPickUp -= DestroyBonus;
+        Destroy(bonus.gameObject);
+    }
+}
