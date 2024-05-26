@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3191480481344486970
+--- !u!1 &2140543447183512886
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6221408177020333031}
-  - component: {fileID: 3882145669830758083}
-  - component: {fileID: 8155110482478847703}
+  - component: {fileID: 783349084295424967}
+  - component: {fileID: 4099952306168563369}
+  - component: {fileID: 1696713992168829191}
   m_Layer: 0
-  m_Name: InfectedHeart
+  m_Name: Money
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6221408177020333031
+--- !u!4 &783349084295424967
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3191480481344486970}
+  m_GameObject: {fileID: 2140543447183512886}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.001998901, y: -0.15799999, z: 0.02700326}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 8303467773322233215}
+  m_Father: {fileID: 3167810919175055977}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &3882145669830758083
+--- !u!212 &4099952306168563369
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3191480481344486970}
+  m_GameObject: {fileID: 2140543447183512886}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ca44250d12f8660428deec1b3426350c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c3e2e7094ca9656468b25bf86dd58063, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,17 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8155110482478847703
+--- !u!95 &1696713992168829191
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3191480481344486970}
+  m_GameObject: {fileID: 2140543447183512886}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e262a21aaf944254c9d97719abf7db2f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8d405ff0628fc6c428e3f9587142a312, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -106,7 +106,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &8360307026035978481
+--- !u!1 &6129450855060685061
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,40 +114,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8303467773322233215}
-  - component: {fileID: 7074845791904552527}
-  - component: {fileID: 6235966638960345165}
-  - component: {fileID: 5757550022809242528}
+  - component: {fileID: 3167810919175055977}
+  - component: {fileID: 8372224248289403223}
+  - component: {fileID: 3832099100976389628}
   m_Layer: 0
-  m_Name: InfectedHeart
+  m_Name: Coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8303467773322233215
+--- !u!4 &3167810919175055977
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360307026035978481}
+  m_GameObject: {fileID: 6129450855060685061}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 116.134, y: -12.609, z: 0}
-  m_LocalScale: {x: 0.76135, y: 0.76135, z: 0.76135}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 110.693, y: -13.572, z: -0.027003258}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6221408177020333031}
+  - {fileID: 783349084295424967}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &7074845791904552527
+--- !u!58 &8372224248289403223
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360307026035978481}
+  m_GameObject: {fileID: 6129450855060685061}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -173,31 +172,19 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12, y: -0.03}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.56
---- !u!114 &6235966638960345165
+  m_Radius: 0.35
+--- !u!114 &3832099100976389628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360307026035978481}
+  m_GameObject: {fileID: 6129450855060685061}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 289cf390dda75994ea2b44c11f169ace, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fe56e0d65ab35d4495c9bb882088207, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5757550022809242528
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8360307026035978481}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1920d456f4d18664285ab56873a8507b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _denomination: 10
+  _denomination: 1

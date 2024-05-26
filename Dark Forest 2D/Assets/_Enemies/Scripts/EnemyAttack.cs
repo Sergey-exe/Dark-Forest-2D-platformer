@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
+    private const string Attack = nameof(Attack);
+
     [SerializeField] private float _damage;
     [SerializeField] private float _percentCritical = 3;
     [SerializeField] private Indicators _indicators;
@@ -41,7 +43,7 @@ public class EnemyAttack : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Indicators>())
-            _coroutine = StartCoroutine(Attack(collision.GetComponent<Indicators>()));
+            _coroutine = StartCoroutine(Assault(collision.GetComponent<Indicators>()));
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -50,13 +52,13 @@ public class EnemyAttack : MonoBehaviour
             StopCoroutine(_coroutine);
     }
 
-    private IEnumerator Attack(Indicators indicators, float delay = 1.3f)
+    private IEnumerator Assault(Indicators indicators, float delay = 1.3f)
     {
         var whit = new WaitForSeconds(delay);
 
         while (indicators.Health > 0)
         {
-            _animator.SetTrigger("Attack");
+            _animator.SetTrigger(Attack);
             indicators.TakeDamage(StandardDamage());
             yield return whit;
         }

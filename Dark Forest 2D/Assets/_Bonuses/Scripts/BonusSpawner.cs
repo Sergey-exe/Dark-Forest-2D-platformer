@@ -5,7 +5,7 @@ using UnityEngine.UIElements;
 
 public class BonusSpawner : MonoBehaviour
 {
-    [SerializeField] private GameObject _bonus;
+    [SerializeField] private Bonus _bonus;
     [SerializeField] private int _countBonus;
     [SerializeField] private float _offset;
 
@@ -21,7 +21,7 @@ public class BonusSpawner : MonoBehaviour
     {
         for (int i = 0; i < _countBonus; i++)
         {
-            GameObject coin = Instantiate(_bonus, _position, Quaternion.identity);
+            Bonus coin = Instantiate(_bonus, _position, Quaternion.identity);
             coin.GetComponent<Bonus>().OnPickUp += DestroyBonus;
             _position.x += _offset;
         } 

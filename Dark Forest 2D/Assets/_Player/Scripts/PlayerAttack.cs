@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    private const string Attack = nameof(Attack);
 
     [SerializeField] private float _damage;
     [SerializeField] private float _percentCritical = 3;
@@ -29,7 +30,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            _animator.SetTrigger("Attack");
+            _animator.SetTrigger(Attack);
 
             if (_isEnemy)
                 foreach (Indicators indicators in _enemies)

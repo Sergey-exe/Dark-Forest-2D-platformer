@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
+    private const string SpiderDeath = nameof(SpiderDeath);
+
     private Quaternion TurnLeft = Quaternion.Euler(0f, 180f, 0f);
     private Quaternion TurnRight = Quaternion.identity;
 
@@ -70,7 +72,7 @@ public class EnemyMover : MonoBehaviour
     {
         _moveSpeed = 0;
         _jumpForce = 0;
-        _animator.Play("SpiderDeath");
+        _animator.Play(SpiderDeath);
         Destroy(GetComponent<EnemyMover>());
     }
 }

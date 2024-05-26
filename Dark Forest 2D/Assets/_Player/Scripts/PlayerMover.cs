@@ -3,6 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour
 {
+    private const string PlayerDeath = nameof(PlayerDeath);
     private const string Horizontal = nameof(Horizontal);
     private readonly int IsRun = Animator.StringToHash("Run");
 
@@ -72,7 +73,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Death()
     {
-        _animator.Play("PlayerDeath");
+        _animator.Play(PlayerDeath);
         Destroy(GetComponent<PlayerMover>());
     }
 }
