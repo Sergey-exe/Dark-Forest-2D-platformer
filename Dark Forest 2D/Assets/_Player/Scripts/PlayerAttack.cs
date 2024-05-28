@@ -13,17 +13,17 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Indicators _indicators;
     [SerializeField] private Animator _animator;
 
-    private bool _isEnemy;
-    [SerializeField] private List<Indicators> _enemies;
+    private bool _hasEnemy;
+    private List<Indicators> _enemies;
 
     private void OnEnable()
     {
-        _indicators.IsDead += Death;
+        _indicators.IsDeaded += Death;
     }
 
     private void OnDisable()
     {
-        _indicators.IsDead -= Death;
+        _indicators.IsDeaded -= Death;
     }
 
     private void Update()
@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
         {
             _animator.SetTrigger(Attack);
 
-            if (_isEnemy)
+            if (_hasEnemy)
                 foreach (Indicators indicators in _enemies)
                     if (indicators)
                         indicators.TakeDamage(StandardDamage());
@@ -41,21 +41,22 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>())
+        if (collision.GetComponent<Enemy>() & collision.GetComponent<Indicators>())
         {
-            _isEnemy = true;
+            _hasEnemy = true;
             _enemies.Add(collision.GetComponent<Indicators>());
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>())
+        if (collision.GetComponent<Enemy>() & collision.GetComponent<Indicators>())
         {
-            _isEnemy = false;
             _enemies.Remove(collision.GetComponent<Indicators>());
-        }
 
+            if (_enemies.Count == 0)
+                _hasEnemy = false;
+        }
     }
 
     private float StandardDamage()
@@ -69,6 +70,6 @@ public class PlayerAttack : MonoBehaviour
 
     private void Death()
     {
-        Destroy(gameObject.GetComponent<PlayerAttack>());
+        gameObject.GetComponent<PlayerAttack>().enabled = false;
     }
 }

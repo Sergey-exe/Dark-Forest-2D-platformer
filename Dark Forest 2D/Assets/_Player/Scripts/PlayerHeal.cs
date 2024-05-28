@@ -10,8 +10,9 @@ public class PlayerHeal : MonoBehaviour
     {
         if (collision.GetComponent<Heart>())
         {
-            collision.GetComponent<Bonus>().PickUp();
-            _indicators.TakeHeal(collision.GetComponent<Bonus>().Denomination);
+            Bonus heart = collision.GetComponent<Heart>();
+            heart.PickUp();
+            _indicators.TakeHeal(heart.Denomination);
         }
     }
 }

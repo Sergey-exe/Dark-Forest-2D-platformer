@@ -22,7 +22,7 @@ public class BonusSpawner : MonoBehaviour
         for (int i = 0; i < _countBonus; i++)
         {
             Bonus coin = Instantiate(_bonus, _position, Quaternion.identity);
-            coin.GetComponent<Bonus>().OnPickUp += DestroyBonus;
+            coin.OnPickUp += DestroyBonus;
             _position.x += _offset;
         } 
     }

@@ -22,12 +22,12 @@ public class PlayerMover : MonoBehaviour
 
     private void OnEnable()
     {
-        _indicators.IsDead += Death;
+        _indicators.IsDeaded += Death;
     }
 
     private void OnDisable()
     {
-        _indicators.IsDead -= Death;
+        _indicators.IsDeaded -= Death;
     }
 
     private void Start()

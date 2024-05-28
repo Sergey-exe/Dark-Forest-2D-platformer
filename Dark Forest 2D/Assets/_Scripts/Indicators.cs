@@ -19,7 +19,7 @@ public class Indicators : MonoBehaviour
 
     public float Level => _level;
 
-    public event UnityAction IsDead;
+    public event UnityAction IsDeaded;
     
     private void Start()
     {
@@ -37,7 +37,7 @@ public class Indicators : MonoBehaviour
 
 
         if (_health <= 0)
-            IsDead?.Invoke();
+            IsDeaded?.Invoke();
     }
 
     public void TakeHeal(float heal)

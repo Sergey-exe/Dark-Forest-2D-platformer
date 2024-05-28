@@ -23,13 +23,13 @@ public class EnemyMover : MonoBehaviour
     private void OnEnable()
     {
         _playerDetector.HasPlayer += ChangeDirection;
-        _indicators.IsDead += Death;
+        _indicators.IsDeaded += Death;
     }
 
     private void OnDisable()
     {
         _playerDetector.HasPlayer -= ChangeDirection;
-        _indicators.IsDead -= Death;
+        _indicators.IsDeaded -= Death;
     }
 
     private void Update()

@@ -17,12 +17,12 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnEnable()
     {
-        _indicators.IsDead += Death;
+        _indicators.IsDeaded += Death;
     }
 
     private void OnDisable()
     {
-        _indicators.IsDead -= Death;
+        _indicators.IsDeaded -= Death;
     }
 
     private void Start()
@@ -31,7 +31,7 @@ public class EnemyAttack : MonoBehaviour
             _level = _indicators.Level;
     }
 
-    private float StandardDamage()
+    private float DamageStandard()
     {
         int criticalChance = Random.Range(0, 1);
         int percent = 100;
@@ -59,13 +59,13 @@ public class EnemyAttack : MonoBehaviour
         while (indicators.Health > 0)
         {
             _animator.SetTrigger(Attack);
-            indicators.TakeDamage(StandardDamage());
+            indicators.TakeDamage(DamageStandard());
             yield return whit;
         }
     }
 
     private void Death()
     {
-        Destroy(gameObject.GetComponent<EnemyAttack>());
+        gameObject.GetComponent<EnemyAttack>().enabled = false;
     }
 }
