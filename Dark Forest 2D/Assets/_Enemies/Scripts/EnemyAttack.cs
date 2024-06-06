@@ -66,6 +66,6 @@ public class EnemyAttack : MonoBehaviour
 
     private void Death()
     {
-        gameObject.GetComponent<EnemyAttack>().enabled = false;
+        Destroy(gameObject.GetComponent<EnemyAttack>());
     }
 }

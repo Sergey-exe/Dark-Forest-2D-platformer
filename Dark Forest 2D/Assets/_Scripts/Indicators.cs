@@ -16,11 +16,13 @@ public class Indicators : MonoBehaviour
     [SerializeField] private float _level;
 
     public float Health => _health;
+    public float MaxHealth => _maxHealth;
 
     public float Level => _level;
 
     public event UnityAction IsDeaded;
-    
+    public event UnityAction ChangeHealth;
+
     private void Start()
     {
         _health = _maxHealth;
@@ -35,6 +37,7 @@ public class Indicators : MonoBehaviour
 
         _health -= damage1;
 
+        ChangeHealth?.Invoke();
 
         if (_health <= 0)
             IsDeaded?.Invoke();
@@ -43,8 +46,9 @@ public class Indicators : MonoBehaviour
     public void TakeHeal(float heal)
     {
         _health += heal;
-        
-        if(_health > _maxHealth)
+        ChangeHealth?.Invoke();
+
+        if (_health > _maxHealth)
             _health = _maxHealth;
     }
 }

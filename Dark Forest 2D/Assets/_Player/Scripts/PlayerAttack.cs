@@ -16,6 +16,11 @@ public class PlayerAttack : MonoBehaviour
     private bool _hasEnemy;
     private List<Indicators> _enemies;
 
+    private void Start()
+    {
+        _enemies = new List<Indicators>();
+    }
+
     private void OnEnable()
     {
         _indicators.IsDeaded += Death;
