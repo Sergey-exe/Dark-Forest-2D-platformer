@@ -7,11 +7,14 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
+
 public class HealthBar : MonoBehaviour
 {
-    [SerializeField] private Slider _slider;
     [SerializeField] private Indicators _indicators;
     [SerializeField] private TextMeshProUGUI _text;
+
+    private Slider _slider;
 
     private void OnEnable()
     {
@@ -22,6 +25,11 @@ public class HealthBar : MonoBehaviour
     private void OnDisable()
     {
         _indicators.ChangeHealth -= ChangeBar;
+    }
+
+    private void Start()
+    {
+        _slider = GetComponent<Slider>();
     }
 
     private void ChangeBar()

@@ -3,14 +3,16 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(Slider))]
+
 public class SmoothHealthBar : MonoBehaviour
 {
     private const int Factor = 20;
 
-    [SerializeField] private Slider _slider;
     [SerializeField] private Indicators _indicators;
     [SerializeField] private TextMeshProUGUI _text;
 
+    private Slider _slider;
     private Coroutine _coroutine;
 
     private void OnEnable()
@@ -22,6 +24,11 @@ public class SmoothHealthBar : MonoBehaviour
     private void OnDisable()
     {
         _indicators.ChangeHealth -= ChangeBar;
+    }
+
+    private void Start()
+    {
+        _slider = GetComponent<Slider>();
     }
 
     private void ChangeBar()
