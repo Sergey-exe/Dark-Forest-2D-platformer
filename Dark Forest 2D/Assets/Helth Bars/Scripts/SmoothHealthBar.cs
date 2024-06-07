@@ -1,44 +1,19 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Slider))]
-
-public class SmoothHealthBar : MonoBehaviour
+public class SmoothHealthBar : AbstractHealthBar
 {
     private const int Factor = 20;
 
-    [SerializeField] private Indicators _indicators;
-    [SerializeField] private TextMeshProUGUI _text;
-
-    private Slider _slider;
-    private Coroutine _coroutine;
-
-    private void OnEnable()
-    {
-        _indicators.ChangeHealth += ChangeBar;
-
-    }
-
-    private void OnDisable()
-    {
-        _indicators.ChangeHealth -= ChangeBar;
-    }
-
-    private void Start()
-    {
-        _slider = GetComponent<Slider>();
-    }
-
-    private void ChangeBar()
+    public override void ChangeBar()
     {
         float speedBar = 0.0001f;
 
-        if (_coroutine != null)
-            StopCoroutine(_coroutine);
+        if (Coroutine != null)
+            StopCoroutine(Coroutine);
 
-        _coroutine = StartCoroutine(SmoothlyChangeHealthBar(speedBar));
+        Coroutine = StartCoroutine(SmoothlyChangeHealthBar(speedBar));
     }
 
     private IEnumerator SmoothlyChangeHealthBar(float delay)
@@ -48,7 +23,7 @@ public class SmoothHealthBar : MonoBehaviour
         float maxPercent = 100;
         float percentHealth;
 
-        percentHealth = _indicators.Health * maxPercent / _indicators.MaxHealth;
+        percentHealth = Indicators.Health * maxPercent / Indicators.MaxHealth;
         percentHealth = Mathf.Round(percentHealth);
 
         if (percentHealth < 0)
@@ -57,11 +32,11 @@ public class SmoothHealthBar : MonoBehaviour
             percentHealth = maxPercent;
 
 
-        _text.text = $"{percentHealth}%/{maxPercent}%";
+        Text.text = $"{percentHealth}%/{maxPercent}%";
 
-        while (_slider.value != percentHealth)
+        while (Slider.value != percentHealth)
         {
-            _slider.value = Mathf.MoveTowards(_slider.value, percentHealth, Factor * Time.deltaTime);
+            Slider.value = Mathf.MoveTowards(Slider.value, percentHealth, Factor * Time.deltaTime);
 
             yield return wait;
         }

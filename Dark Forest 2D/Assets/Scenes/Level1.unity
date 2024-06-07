@@ -22309,6 +22309,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1267374333741114742, guid: 7e7094d0c4e17974ea47ec6133c16103, type: 3}
+      propertyPath: Indicators
+      value: 
+      objectReference: {fileID: 687368803}
+    - target: {fileID: 1267374333741114742, guid: 7e7094d0c4e17974ea47ec6133c16103, type: 3}
       propertyPath: _indicators
       value: 
       objectReference: {fileID: 687368803}
@@ -22464,6 +22468,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9048669574714420054, guid: 7e7094d0c4e17974ea47ec6133c16103, type: 3}
+      propertyPath: Indicators
+      value: 
+      objectReference: {fileID: 687368803}
     - target: {fileID: 9048669574714420054, guid: 7e7094d0c4e17974ea47ec6133c16103, type: 3}
       propertyPath: _indicators
       value: 
