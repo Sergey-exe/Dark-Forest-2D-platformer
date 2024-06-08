@@ -9,24 +9,22 @@ public abstract class AbstractHealthBar : MonoBehaviour
     [SerializeField] protected Indicators Indicators;
     [SerializeField] protected TextMeshProUGUI Text;
 
-    protected Slider Slider;
-    protected Coroutine Coroutine;
+    public Slider Bar { get; private set; }
 
     private void OnEnable()
     {
-        Indicators.ChangeHealth += ChangeBar;
-
+        Indicators.ChangeHealth += ChangedBar;
     }
 
     private void OnDisable()
     {
-        Indicators.ChangeHealth -= ChangeBar;
+        Indicators.ChangeHealth -= ChangedBar;
     }
 
     private void Start()
     {
-        Slider = GetComponent<Slider>();
+        Bar = GetComponent<Slider>();
     }
 
-    public abstract void ChangeBar();
+    public abstract void ChangedBar();
 }

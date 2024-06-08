@@ -6,14 +6,16 @@ public class SmoothHealthBar : AbstractHealthBar
 {
     private const int Factor = 20;
 
-    public override void ChangeBar()
+    private Coroutine _coroutine;
+
+    public override void ChangedBar()
     {
         float speedBar = 0.0001f;
 
-        if (Coroutine != null)
-            StopCoroutine(Coroutine);
+        if (_coroutine != null)
+            StopCoroutine(_coroutine);
 
-        Coroutine = StartCoroutine(SmoothlyChangeHealthBar(speedBar));
+        _coroutine = StartCoroutine(SmoothlyChangeHealthBar(speedBar));
     }
 
     private IEnumerator SmoothlyChangeHealthBar(float delay)
@@ -26,17 +28,11 @@ public class SmoothHealthBar : AbstractHealthBar
         percentHealth = Indicators.Health * maxPercent / Indicators.MaxHealth;
         percentHealth = Mathf.Round(percentHealth);
 
-        if (percentHealth < 0)
-            percentHealth = 0;
-        else if (percentHealth > maxPercent)
-            percentHealth = maxPercent;
-
-
         Text.text = $"{percentHealth}%/{maxPercent}%";
 
-        while (Slider.value != percentHealth)
+        while (Bar.value != percentHealth)
         {
-            Slider.value = Mathf.MoveTowards(Slider.value, percentHealth, Factor * Time.deltaTime);
+            Bar.value = Mathf.MoveTowards(Bar.value, percentHealth, Factor * Time.deltaTime);
 
             yield return wait;
         }

@@ -10,7 +10,6 @@ public class EnemyMover : MonoBehaviour
     private Quaternion TurnRight = Quaternion.identity;
 
     [SerializeField] private float _moveSpeed;
-    [SerializeField] private float _jumpForce;
     [SerializeField] private ObstructionDetector _obstructionDetector;
     [SerializeField] private ObstructionDetector _groundDetector;
     [SerializeField] private PlayerDetector _playerDetector;
@@ -70,9 +69,6 @@ public class EnemyMover : MonoBehaviour
 
     private void Death()
     {
-        _moveSpeed = 0;
-        _jumpForce = 0;
-        _animator.Play(SpiderDeath);
         Destroy(GetComponent<EnemyMover>());
     }
 }

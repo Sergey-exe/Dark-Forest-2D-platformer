@@ -23,11 +23,6 @@ public class TextBar : MonoBehaviour
 
         health = _indicators.Health;
 
-        if (health < 0)
-            health = 0;
-        else if (health > _indicators.MaxHealth)
-            health = _indicators.MaxHealth;
-
         _text.text = $"{health}/{_indicators.MaxHealth}";
     }
 }

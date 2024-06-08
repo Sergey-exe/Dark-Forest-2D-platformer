@@ -36,7 +36,7 @@ public class Indicators : MonoBehaviour
         float damage1 = damage - (_protection / percent * _percentProtection);
 
         _health -= damage1;
-
+        _health = Mathf.Clamp(_health, 0, _maxHealth);
         ChangeHealth?.Invoke();
 
         if (_health <= 0)
@@ -46,6 +46,8 @@ public class Indicators : MonoBehaviour
     public void TakeHeal(float heal)
     {
         _health += heal;
+        _health = Mathf.Clamp(_health, 0, _maxHealth);
+
         ChangeHealth?.Invoke();
 
         if (_health > _maxHealth)
