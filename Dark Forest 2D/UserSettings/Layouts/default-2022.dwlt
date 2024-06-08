@@ -243,8 +243,8 @@ MonoBehaviour:
     y: 0
     width: 1396
     height: 1068
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 17}
@@ -472,9 +472,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 0c860000
-      m_LastClickedID: 0
-      m_ExpandedIDs: d2faffff
+      m_SelectedIDs: 7c780000
+      m_LastClickedID: 30844
+      m_ExpandedIDs: ded2ffffe0d2ffffe6d2ffff28faffff32faffffd2faffffd27800004679000090790000d0790000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1151,7 +1151,7 @@ MonoBehaviour:
       sizeOverriden: 0
     m_OverlaysVisible: 1
   m_WindowGUID: cc27987af1a868c49b0894db9c0f5429
-  m_Gizmos: 0
+  m_Gizmos: 1
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
@@ -1160,9 +1160,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 92.152145, y: -10.378677, z: -0.07408887}
+    m_Target: {x: 93.10584, y: -11.111469, z: -0.11937094}
     speed: 2
-    m_Value: {x: 92.152145, y: -10.378677, z: -0.07408887}
+    m_Value: {x: 93.63393, y: -11.313536, z: -0.11277957}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1212,9 +1212,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.767095
+    m_Target: 15.306615
     speed: 2
-    m_Value: 10.767095
+    m_Value: 14.647478
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1390,7 +1390,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Helth Bars/Scripts
+    - Assets/_Enemies/Spider
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1398,15 +1398,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Helth Bars/Scripts
+  - Assets/_Enemies/Spider
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Unity\Dark-Forest-2D-platformer\Dark Forest 2D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 00860000
-    m_LastClickedID: 34304
+    m_SelectedIDs: 90850000
+    m_LastClickedID: 34192
     m_ExpandedIDs: 000000007c8500007e8500009a850000ffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
