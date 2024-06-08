@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(Slider))]
 
-public abstract class AbstractHealthBar : MonoBehaviour
+public abstract class HealthBar : MonoBehaviour
 {
     [SerializeField] protected Indicators Indicators;
     [SerializeField] protected TextMeshProUGUI Text;

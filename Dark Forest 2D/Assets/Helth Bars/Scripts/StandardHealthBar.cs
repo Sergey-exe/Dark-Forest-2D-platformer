@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HealthBar : AbstractHealthBar
+public class StandardHealthBar : HealthBar
 {
     public override void ChangedBar()
     {

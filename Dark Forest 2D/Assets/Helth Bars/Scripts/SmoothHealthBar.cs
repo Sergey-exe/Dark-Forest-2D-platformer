@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SmoothHealthBar : AbstractHealthBar
+public class SmoothHealthBar : HealthBar
 {
     private const int Factor = 20;
 
