@@ -69,6 +69,7 @@ public class EnemyMover : MonoBehaviour
 
     private void Death()
     {
+        _animator.Play(SpiderDeath);
         Destroy(GetComponent<EnemyMover>());
     }
 }

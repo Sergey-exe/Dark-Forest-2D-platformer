@@ -294,6 +294,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 509942484198301155}
     m_Modifications:
+    - target: {fileID: 2690917704525834087, guid: 2bdd78b2dfa4a89469ada5e6c96291ba, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3575726459171371288, guid: 2bdd78b2dfa4a89469ada5e6c96291ba, type: 3}
+      propertyPath: _indicators
+      value: 
+      objectReference: {fileID: 3816178642873306858}
     - target: {fileID: 3907111737395632522, guid: 2bdd78b2dfa4a89469ada5e6c96291ba, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -382,6 +390,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5316311142673651921, guid: 2bdd78b2dfa4a89469ada5e6c96291ba, type: 3}
+      propertyPath: Indicators
+      value: 
+      objectReference: {fileID: 3816178642873306858}
     - target: {fileID: 6318497068667171084, guid: 2bdd78b2dfa4a89469ada5e6c96291ba, type: 3}
       propertyPath: m_Name
       value: Enemy bar Variant

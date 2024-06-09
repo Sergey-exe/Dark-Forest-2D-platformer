@@ -6,7 +6,7 @@ public class BarRotate : MonoBehaviour
 {
     private Quaternion _startQuaternion;
 
-    private void Start()
+    private void Awake()
     {
         _startQuaternion = transform.rotation;
     }
