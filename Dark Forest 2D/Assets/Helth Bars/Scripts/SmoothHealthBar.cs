@@ -8,20 +8,21 @@ public class SmoothHealthBar : HealthBar
 
     private Coroutine _coroutine;
 
-    public override void ChangedBar()
+    private void LateUpdate()
     {
-        float speedBar = 0.0001f;
+        
+    }
 
+    public override void ChangeBar()
+    {
         if (_coroutine != null)
             StopCoroutine(_coroutine);
 
-        _coroutine = StartCoroutine(SmoothlyChangeHealthBar(speedBar));
+        _coroutine = StartCoroutine(SmoothlyChangeHealthBar());
     }
 
-    private IEnumerator SmoothlyChangeHealthBar(float delay)
+    private IEnumerator SmoothlyChangeHealthBar()
     {
-        WaitForSeconds wait = new WaitForSeconds(delay);
-
         float maxPercent = 100;
         float percentHealth;
 
@@ -34,7 +35,7 @@ public class SmoothHealthBar : HealthBar
         {
             Bar.value = Mathf.MoveTowards(Bar.value, percentHealth, Factor * Time.deltaTime);
 
-            yield return wait;
+            yield return null;
         }
     }
 }

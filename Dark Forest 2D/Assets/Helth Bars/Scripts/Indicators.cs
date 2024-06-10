@@ -33,9 +33,9 @@ public class Indicators : MonoBehaviour
     {
         int percent = 100;
 
-        float damage1 = damage - (_protection / percent * _percentProtection);
+        float finalDamage = damage - (_protection / percent * _percentProtection);
 
-        _health -= damage1;
+        _health -= finalDamage;
         _health = Mathf.Clamp(_health, 0, _maxHealth);
         ChangeHealth?.Invoke();
 
@@ -49,8 +49,5 @@ public class Indicators : MonoBehaviour
         _health = Mathf.Clamp(_health, 0, _maxHealth);
 
         ChangeHealth?.Invoke();
-
-        if (_health > _maxHealth)
-            _health = _maxHealth;
     }
 }

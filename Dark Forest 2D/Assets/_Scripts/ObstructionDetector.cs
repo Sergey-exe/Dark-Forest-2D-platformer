@@ -26,11 +26,7 @@ public class ObstructionDetector : MonoBehaviour
     {
         RaycastHit2D forwardHit = Physics2D.Raycast(transform.position, _directionForwardHit, _rayDistance, _layerObstruction);
         RaycastHit2D downHit = Physics2D.Raycast(transform.position, _directionDownHit, _rayDistance, _layerObstruction);
-
-        if (forwardHit.collider != null || downHit.collider == null)
-            HasObstruction = true;
-        else 
-            HasObstruction = false;
+        HasObstruction = forwardHit.collider != null || downHit.collider == null;
     }
 
     private void LateUpdate()

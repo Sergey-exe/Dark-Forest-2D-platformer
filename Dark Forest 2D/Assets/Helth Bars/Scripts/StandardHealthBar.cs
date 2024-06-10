@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StandardHealthBar : HealthBar
 {
-    public override void ChangedBar()
+    public override void ChangeBar()
     {
         float maxPercent = 100;
         float percentHealth;
