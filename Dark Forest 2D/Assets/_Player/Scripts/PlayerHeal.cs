@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerHeal : MonoBehaviour
 {
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _health;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -12,7 +12,7 @@ public class PlayerHeal : MonoBehaviour
         {
             Bonus heart = collision.GetComponent<Heart>();
             heart.PickUp();
-            _indicators.TakeHeal(heart.Denomination);
+            _health.TakeHeal(heart.Denomination);
         }
     }
 }

@@ -14,7 +14,7 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private ObstructionDetector _groundDetector;
     [SerializeField] private PlayerDetector _playerDetector;
     [SerializeField] private Animator _animator;
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _indicators;
 
     private int _axis = 1;
     private Vector2 _movementDirection;

@@ -6,19 +6,19 @@ using UnityEngine.UI;
 
 public abstract class HealthBar : MonoBehaviour
 {
-    [SerializeField] protected Indicators Indicators;
+    [SerializeField] protected Health Health;
     [SerializeField] protected TextMeshProUGUI Text;
 
     protected Slider Bar;
 
     private void OnEnable()
     {
-        Indicators.ChangeHealth += ChangeBar;
+        Health.ChangeHealth += ChangeBar;
     }
 
     private void OnDisable()
     {
-        Indicators.ChangeHealth -= ChangeBar;
+        Health.ChangeHealth -= ChangeBar;
     }
 
     private void Start()

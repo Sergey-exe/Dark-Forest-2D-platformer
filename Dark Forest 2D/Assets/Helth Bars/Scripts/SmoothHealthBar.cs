@@ -4,14 +4,9 @@ using UnityEngine.UI;
 
 public class SmoothHealthBar : HealthBar
 {
-    private const int Factor = 20;
+    private const int Factor = 5;
 
     private Coroutine _coroutine;
-
-    private void LateUpdate()
-    {
-        
-    }
 
     public override void ChangeBar()
     {
@@ -24,16 +19,17 @@ public class SmoothHealthBar : HealthBar
     private IEnumerator SmoothlyChangeHealthBar()
     {
         float maxPercent = 100;
-        float percentHealth;
+        float percentHealth = Health.GetHealth * maxPercent / Health.MaxHealth;
+        float barValue = Bar.value;
 
-        percentHealth = Indicators.Health * maxPercent / Indicators.MaxHealth;
         percentHealth = Mathf.Round(percentHealth);
 
-        Text.text = $"{percentHealth}%/{maxPercent}%";
+        Text.text = $"{percentHealth}%";
 
         while (Bar.value != percentHealth)
         {
-            Bar.value = Mathf.MoveTowards(Bar.value, percentHealth, Factor * Time.deltaTime);
+            barValue = Mathf.Lerp(barValue, percentHealth, Factor * Time.deltaTime);
+            Bar.value = barValue;
 
             yield return null;
         }

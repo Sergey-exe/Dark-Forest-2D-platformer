@@ -13,7 +13,7 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _jumpForce;
     [SerializeField] private ObstructionDetector _groundDetector;
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _indicators;
     [SerializeField] private Animator _animator;
 
     private bool _isRun;

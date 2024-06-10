@@ -8,7 +8,7 @@ public class EnemyAttack : MonoBehaviour
 
     [SerializeField] private float _damage;
     [SerializeField] private float _percentCritical = 3;
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _indicators;
     [SerializeField] private Animator _animator;
 
     private float _level = 1;
@@ -42,8 +42,8 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Indicators>())
-            _coroutine = StartCoroutine(Assault(collision.GetComponent<Indicators>()));
+        if (collision.GetComponent<Health>())
+            _coroutine = StartCoroutine(Assault(collision.GetComponent<Health>()));
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -52,11 +52,11 @@ public class EnemyAttack : MonoBehaviour
             StopCoroutine(_coroutine);
     }
 
-    private IEnumerator Assault(Indicators indicators, float delay = 1.3f)
+    private IEnumerator Assault(Health indicators, float delay = 1.3f)
     {
         var whit = new WaitForSeconds(delay);
 
-        while (indicators.Health > 0)
+        while (indicators.GetHealth > 0)
         {
             _animator.SetTrigger(Attack);
             indicators.TakeDamage(DamageStandard());

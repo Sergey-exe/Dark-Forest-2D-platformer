@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _damage: 20
   _percentCritical: 3
-  _indicators: {fileID: 3816178642873306858}
+  _indicators: {fileID: 0}
   _animator: {fileID: 6000978220536114831}
 --- !u!1 &5109416352762175738
 GameObject:
@@ -369,7 +369,7 @@ PrefabInstance:
       addedObject: {fileID: 2250567241643607749}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: c95bff9b5d8ab564c9be496cf978e13f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3816178642873306858}
+      addedObject: {fileID: 1225766482083361861}
     - targetCorrespondingSourceObject: {fileID: -8653719598885068355, guid: c95bff9b5d8ab564c9be496cf978e13f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8388748891621152909}
@@ -437,8 +437,8 @@ MonoBehaviour:
   _groundDetector: {fileID: 9129372523625514284}
   _playerDetector: {fileID: 4519493642924651598}
   _animator: {fileID: 6000978220536114831}
-  _indicators: {fileID: 3816178642873306858}
---- !u!114 &3816178642873306858
+  _indicators: {fileID: 1225766482083361861}
+--- !u!114 &1225766482083361861
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -447,16 +447,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1719165766765266304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b74e75f33080094b9943914b0f0a69d, type: 3}
+  m_Script: {fileID: 11500000, guid: 76a42b58bfd59d5479e5899c4fcf2d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 0
   _maxHealth: 800
-  _protection: 2
-  _percentProtection: 90
-  _energy: 0
-  _maxEnergy: 0
-  _level: 1
+  _protection: 5
+  _percentProtection: 5
+  _level: 0
 --- !u!50 &8388748891621152909
 Rigidbody2D:
   serializedVersion: 4

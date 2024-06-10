@@ -10,15 +10,15 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private float _damage;
     [SerializeField] private float _percentCritical = 3;
     [SerializeField] private int _level = 1;
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _indicators;
     [SerializeField] private Animator _animator;
 
     private bool _hasEnemy;
-    private List<Indicators> _enemies;
+    private List<Health> _enemies;
 
     private void Start()
     {
-        _enemies = new List<Indicators>();
+        _enemies = new List<Health>();
     }
 
     private void OnEnable()
@@ -38,7 +38,7 @@ public class PlayerAttack : MonoBehaviour
             _animator.SetTrigger(Attack);
 
             if (_hasEnemy)
-                foreach (Indicators indicators in _enemies)
+                foreach (Health indicators in _enemies)
                     if (indicators)
                         indicators.TakeDamage(StandardDamage());
         }
@@ -46,18 +46,18 @@ public class PlayerAttack : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() & collision.GetComponent<Indicators>())
+        if (collision.GetComponent<Enemy>() & collision.GetComponent<Health>())
         {
             _hasEnemy = true;
-            _enemies.Add(collision.GetComponent<Indicators>());
+            _enemies.Add(collision.GetComponent<Health>());
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Enemy>() & collision.GetComponent<Indicators>())
+        if (collision.GetComponent<Enemy>() & collision.GetComponent<Health>())
         {
-            _enemies.Remove(collision.GetComponent<Indicators>());
+            _enemies.Remove(collision.GetComponent<Health>());
 
             if (_enemies.Count == 0)
                 _hasEnemy = false;

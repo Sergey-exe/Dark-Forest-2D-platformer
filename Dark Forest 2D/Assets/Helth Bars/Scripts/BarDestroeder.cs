@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class BarDestroyer : MonoBehaviour
 {
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _health;
     [SerializeField] private Canvas _canvas;
 
     private void OnEnable()
     {
-        _indicators.IsDeaded += DestroyBar;
+        _health.IsDeaded += DestroyBar;
     }
 
     private void OnDisable()
     {
-        _indicators.IsDeaded -= DestroyBar;
+        _health.IsDeaded -= DestroyBar;
     }
 
     private void DestroyBar()

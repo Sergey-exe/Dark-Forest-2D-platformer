@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class TextBar : MonoBehaviour
 {
-    [SerializeField] private Indicators _indicators;
+    [SerializeField] private Health _indicators;
     [SerializeField] private TextMeshProUGUI _text;
 
     private void OnEnable()
@@ -21,7 +21,7 @@ public class TextBar : MonoBehaviour
     {
         float health;
 
-        health = _indicators.Health;
+        health = _indicators.GetHealth;
 
         _text.text = $"{health}/{_indicators.MaxHealth}";
     }

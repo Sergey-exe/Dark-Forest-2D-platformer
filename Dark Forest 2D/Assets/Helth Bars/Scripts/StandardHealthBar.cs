@@ -8,10 +8,10 @@ public class StandardHealthBar : HealthBar
         float maxPercent = 100;
         float percentHealth;
 
-        percentHealth = Indicators.Health * maxPercent / Indicators.MaxHealth;
+        percentHealth = Health.GetHealth * maxPercent / Health.MaxHealth;
         percentHealth = Mathf.Round(percentHealth);
 
-        Text.text = $"{percentHealth}%/{maxPercent}%";
+        Text.text = $"{percentHealth}%";
         Bar.value = percentHealth;
     }
 }
