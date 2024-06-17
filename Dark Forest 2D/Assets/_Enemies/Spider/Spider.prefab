@@ -450,11 +450,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76a42b58bfd59d5479e5899c4fcf2d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 0
-  _maxHealth: 800
   _protection: 5
   _percentProtection: 5
-  _level: 0
+  <CurrentHealth>k__BackingField: 0
+  <MaxHealth>k__BackingField: 600
+  <Level>k__BackingField: 1
 --- !u!50 &8388748891621152909
 Rigidbody2D:
   serializedVersion: 4

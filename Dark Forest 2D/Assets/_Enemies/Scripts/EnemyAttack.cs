@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
@@ -56,7 +55,7 @@ public class EnemyAttack : MonoBehaviour
     {
         var whit = new WaitForSeconds(delay);
 
-        while (indicators.GetHealth > 0)
+        while (indicators.CurrentHealth > 0)
         {
             _animator.SetTrigger(Attack);
             indicators.TakeDamage(DamageStandard());

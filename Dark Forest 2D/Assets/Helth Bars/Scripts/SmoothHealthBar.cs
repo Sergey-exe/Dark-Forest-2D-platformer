@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class SmoothHealthBar : HealthBar
 {
@@ -19,7 +18,7 @@ public class SmoothHealthBar : HealthBar
     private IEnumerator SmoothlyChangeHealthBar()
     {
         float maxPercent = 100;
-        float percentHealth = Health.GetHealth * maxPercent / Health.MaxHealth;
+        float percentHealth = Health.CurrentHealth * maxPercent / Health.MaxHealth;
         float barValue = Bar.value;
 
         percentHealth = Mathf.Round(percentHealth);

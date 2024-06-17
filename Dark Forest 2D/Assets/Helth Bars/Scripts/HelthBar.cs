@@ -6,10 +6,11 @@ using UnityEngine.UI;
 
 public abstract class HealthBar : MonoBehaviour
 {
-    [SerializeField] protected Health Health;
-    [SerializeField] protected TextMeshProUGUI Text;
+    [field: SerializeField] public Health Health { get; private set; }
 
-    protected Slider Bar;
+    [field: SerializeField] public TextMeshProUGUI Text { get; private set; }
+
+    [field: SerializeField] public Slider Bar { get; private set; }
 
     private void OnEnable()
     {

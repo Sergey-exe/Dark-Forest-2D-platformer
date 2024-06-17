@@ -21,7 +21,7 @@ public class TextBar : MonoBehaviour
     {
         float health;
 
-        health = _indicators.GetHealth;
+        health = _indicators.CurrentHealth;
 
         _text.text = $"{health}/{_indicators.MaxHealth}";
     }

@@ -1,14 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 
 public abstract class Bonus : MonoBehaviour 
 {
-    [SerializeField] private int _denomination;
-
-    public int Denomination => _denomination; 
+    [field: SerializeField] public int Denomination { get; private set; }
 
     public event UnityAction<Bonus> OnPickUp;
 

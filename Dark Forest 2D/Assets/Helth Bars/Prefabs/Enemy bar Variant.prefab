@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: da3c2be453fcf7d4fab0d93bd9c68b0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _indicators: {fileID: 0}
+  _health: {fileID: 0}
   _canvas: {fileID: 7206523562197489430}
 --- !u!223 &7206523562197489430 stripped
 Canvas:
