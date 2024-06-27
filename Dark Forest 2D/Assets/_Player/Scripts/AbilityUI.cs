@@ -6,9 +6,9 @@ public class AbilityUI : MonoBehaviour
 {
     [SerializeField] private Button _abilityButton;
 
-    Coroutine _coroutine;
+    private Coroutine _coroutine;
 
-    public void ChangeButton(float timeRecharge)
+    public void ChangeUI(float timeRecharge)
     {
         if (_coroutine != null)
             StopCoroutine(_coroutine);
@@ -22,8 +22,8 @@ public class AbilityUI : MonoBehaviour
         float minValue = 0;
         float speed = maxValue / timeRecharge;
 
-        _abilityButton.interactable = false;
         Image _absorptionImage = _abilityButton.GetComponent<Image>();
+        _abilityButton.interactable = false;
         _absorptionImage.fillAmount = minValue;
 
         while (_absorptionImage.fillAmount != maxValue)

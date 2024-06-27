@@ -9,6 +9,6 @@ public abstract class Bonus : MonoBehaviour
 
     public void PickUp()
     {
-        OnPickUp?.Invoke(GetComponent<Bonus>());
+        OnPickUp?.Invoke(this);
     }
 }

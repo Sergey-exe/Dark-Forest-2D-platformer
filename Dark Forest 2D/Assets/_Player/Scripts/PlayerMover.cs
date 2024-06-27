@@ -4,7 +4,6 @@ using UnityEngine;
 public class PlayerMover : MonoBehaviour
 {
     private const string PlayerDeath = nameof(PlayerDeath);
-    private const string Horizontal = nameof(Horizontal);
     private readonly int IsRun = Animator.StringToHash("Run");
 
     private Quaternion TurnLeft = Quaternion.Euler(0f, 180f, 0f);
@@ -15,7 +14,9 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] private ObstructionDetector _groundDetector;
     [SerializeField] private Health _indicators;
     [SerializeField] private Animator _animator;
+    [SerializeField] private InputReader _inputReader;
 
+    private float _axis;
     private bool _isRun;
     private Vector2 _movementDirection;
     private Rigidbody2D _rigidbody;
@@ -37,24 +38,24 @@ public class PlayerMover : MonoBehaviour
 
     private void Update()
     {
-        var axis = Input.GetAxis(Horizontal);
+        _axis = _inputReader.InputMoveAxis();
 
         Jump();
-        Move(axis);
-        Rotate(axis);
+        Move();
+        Rotate();
     }
 
-    private void Move(float axis)
+    private void Move()
     {
-        _movementDirection.x = _moveSpeed * axis;
+        _movementDirection.x = _moveSpeed * _axis;
         transform.Translate(_movementDirection, Space.World);
-        _isRun = axis != 0;
+        _isRun = _axis != 0;
         _animator.SetBool(IsRun, _isRun);
     }
 
-    private void Rotate(float velocityX)
+    private void Rotate()
     {
-        switch (velocityX)
+        switch (_axis)
         {
             case > 0:
                 transform.localRotation = TurnRight;
@@ -67,7 +68,7 @@ public class PlayerMover : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && _groundDetector.HasObstruction == false)
+        if (_inputReader.DownButtonPlayerJump() && _groundDetector.HasObstruction == false)
             _rigidbody.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
     }
 
